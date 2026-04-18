@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="source/css/style.css">
+    <link rel="stylesheet" href="source/css/rainbow.css">
+    <title>SnugSMP Website</title>
+</head>
+<body>
+    <header style="">
+        <img src="source/icon-small.png" height="75" class="icon">
+        <h1>SnugSMP</h1>
+        <div style="flex-grow: 1"></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#staff">Staff</a>
+            <a href="#store">Store</a>
+        </nav>
+        <div>
+            <a href="https://discord.com/" target="_blank">
+                <img class="discord" src="source/discord.jpg" width="45px">
+            </a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2 class="text-center">About</h2>
+        </section>
+        <section id="staff">
+            <h2 class="text-center">Staff</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+                <player-display user="Katomancer"></player-display>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <b>SnugSMP © 2026. All Rights Reserved.</b>
+        <p>We are not affiliated with Mojang, Minecraft or Microsoft.</p>
+    </footer>
+    <script src="source/js/PlayerDisplay.js"></script>
+</body>
+</html>
