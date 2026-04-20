@@ -3,11 +3,16 @@ html, body {
     padding: 0px;
     font-family: Poppins;
     color: #dadada;
-    font-size: 18px;
+    font-size: 20px;
+    scrollbar-width: none;
 }
 
 body {
-    background: #181818;
+    background-image: url("https://64.media.tumblr.com/bc83495f17d5d9ee87537231190cc15c/fc608a00e680f87d-3c/s1280x1920/c6b7af7926bc3e63d356f40b0b6bae9b6a98c402.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,23 +21,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    margin: 0px;
+    margin: 1rem 0;
 }
 
 a {
+    color: #777777;
+}
+
+nav > a {
     text-decoration: none;
     color: #ffffff;
     cursor: pointer;
 }
 
-a:hover {
+nav > a:hover {
     text-decoration: underline;
     color: #777777;
 }
 
 nav {
     display: flex;
-    width: 200px;
+    width: 500px;
     justify-content: space-between;
 }
 
@@ -49,13 +58,13 @@ img.icon {
     box-shadow: 0px 0px 10px 5px #5662F640;
 }
 
-section {
-    margin: 1rem;
+main {
+    margin: 350px 0px 0px 0px;
     padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid #55555560;
-    background: #232323;
-    width: calc(100% - 70px);
+    border-top: 1px solid #55555560;
+    background: #23232360;
+    backdrop-filter: blur(10px);
+    width: calc(100% - 2rem);
     height: fit-content;
 }
 
@@ -80,27 +89,43 @@ header {
 footer {
     color: light-gray;
     font-size: 0.75rem;
-    position: absolute;
+    position: relative;
     bottom: 0px;
     z-index: 1000;
     padding: 10px 20px;
-    background: #22222240;
+    background: #23232360;
     backdrop-filter: blur(10px);
-    box-shadow: 1px 1px 10px 5px #00000040;
     text-align: center;
     width: calc(100% - 40px);
-    border-bottom: 1px solid #55555560;
+    border-top: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
 }
 
 .player-display {
-    width: 150px;
+    width: fit-content;
     padding: 15px;
     height: fit-content;
-    border-radius: 10px;
-    border: none;
-    background: #323232;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+
+.player-display > img {
+    filter: drop-shadow(0px 0px 10px #222222);
+}
+
+hr {
+    border-color: #323232;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+}
+
+.section-text {
+    margin: auto;
+    width: calc(100% - 20px);
+    max-width: 850px;
+    text-align: center;
 }

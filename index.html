@@ -10,39 +10,69 @@
 <body>
     <header style="">
         <img src="source/icon-small.png" height="75" class="icon">
-        <h1>SnugSMP</h1>
+        <h1 style="margin: 0px;">SnugSMP</h1>
         <div style="flex-grow: 1"></div>
         <nav>
             <a href="#about">About</a>
+            <a href="#staff">Featured</a>
+            <a href="#staff">News</a>
             <a href="#staff">Staff</a>
             <a href="#store">Store</a>
         </nav>
         <div>
-            <a href="https://discord.com/" target="_blank">
+            <a href="https://discord.gg/SnugSMP" target="_blank">
                 <img class="discord" src="source/discord.jpg" width="45px">
             </a>
         </div>
     </header>
     <main>
         <section id="about">
-            <h2 class="text-center">About</h2>
+            <h2 class="text-center">Overview</h2>
+            <div class="section-text">
+                <p>This is a peaceful Minecraft survival server for cozy builders and chill players!</p>
+                <p>
+                    No PvP, no pay-to-win, and <b>no resets ever</b> — your builds stay!<br>
+                    Build castles, cottages, villages, or whatever feels like home.
+                </p>
+                <p>You can join from both <b>Java</b> and <b>Bedrock</b>!</p>
+            </div>
         </section>
+        <hr>
+        <section id="featured">
+            <h2 class="text-center">Featured</h2>
+            <p class="section-text">
+                Here are some featured builds and places from our server!
+            </p>
+        </section>
+        <hr>
+        <section id="news">
+            <h2 class="text-center">News</h2>
+            <p class="section-text">
+                The latest news about our server!
+            </p>
+        </section>
+        <hr>
         <section id="staff">
             <h2 class="text-center">Staff</h2>
+            <p class="section-text">
+                People who keep it awesome!
+            </p>
             <div style="display: flex; justify-content: space-between;">
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
-                <player-display user="Katomancer"></player-display>
+                <player-display user="Steve" tooltip="Server Owner"></player-display>
+                <player-display user="Katomancer" tooltip="Admin"></player-display>
+                <player-display user="AbyssalChloe" tooltip="Mod"></player-display>
+                <player-display user="Steve" tooltip="Mod"></player-display>
+                <player-display user="Steve" tooltip="Mod"></player-display>
+                <player-display user="Steve" tooltip="Mod"></player-display>
             </div>
         </section>
     </main>
     <footer>
-        <b>SnugSMP © 2026. All Rights Reserved.</b>
-        <p>We are not affiliated with Mojang, Minecraft or Microsoft.</p>
+        <span>
+            Made by <b><a href="https://github.com/rumyantsev168/snugsmp">@rumyantsev168</a></b>!
+            Staff pfps by <a href="https://mc-tools.net/avatar">https://mc-tools.net/avatar</a>
+        </span>
+        <span>Not affiliated with Mojang, Minecraft or Microsoft.</span>
     </footer>
     <script src="source/js/PlayerDisplay.js"></script>
 </body>

@@ -5,7 +5,7 @@ class PlayerDisplay extends HTMLElement {
 
     // Observe attribute changes
     static get observedAttributes() {
-        return ["user"];
+        return ["user", "tooltip"]; // Add tooltip to observed attributes
     }
 
     connectedCallback() {
@@ -13,13 +13,15 @@ class PlayerDisplay extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "user" && oldValue !== newValue) {
+        if (name === "user" || name === "tooltip") { // Re-render if user or tooltip changes
             this.render();
         }
     }
 
     render() {
         const username = this.getAttribute("user");
+        const tooltip = this.getAttribute("tooltip");
+
         if (!username) {
             console.error("No 'user' attribute found!");
             return;
@@ -31,9 +33,14 @@ class PlayerDisplay extends HTMLElement {
         const display = document.createElement("div");
         display.className = "player-display";
 
+        // Set tooltip as title attribute if provided
+        if (tooltip) {
+            display.title = tooltip;
+        }
+
         const skinImg = document.createElement("img");
-        skinImg.src = `https://mc-heads.net/body/${username}/right`;
-        skinImg.width = 100;
+        skinImg.src = `source/${username}_avatar_drops.png`;
+        skinImg.width = 200;
         skinImg.alt = `${username}'s Minecraft skin`;
         skinImg.onerror = () => {
             skinImg.style.display = "none";
