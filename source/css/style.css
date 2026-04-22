@@ -14,10 +14,11 @@ html, body {
 }
 
 body {
+    background: #000000;
     background-image: url("https://64.media.tumblr.com/bc83495f17d5d9ee87537231190cc15c/fc608a00e680f87d-3c/s1280x1920/c6b7af7926bc3e63d356f40b0b6bae9b6a98c402.png");
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: cover;
+    background-size: contain;
     background-attachment: fixed;
 }
 
