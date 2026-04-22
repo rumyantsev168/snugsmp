@@ -1,0 +1,9 @@
+content: |
+    **Hey, I'm just an announcement section!**
+    
+    Regular __Italics__ **Bold**\
+    [I can have links too!](source/data/latestAnnouncement.yml)
+    
+    | And | tables! |
+    |:---:|:-------:|
+    | 123 | 4567890 |

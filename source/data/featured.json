@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Featured №1",
+        "image": "1.png",
+        "coordinates": {
+            "x": 123,
+            "y": 456,
+            "z": 789
+        }
+    },
+    {
+        "name": "Featured №2",
+        "image": "2.png",
+        "coordinates": {
+            "x": -123,
+            "y": 0,
+            "z": 4453
+        }
+    },
+    {
+        "name": "Featured №3",
+        "image": "3.png",
+        "coordinates": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }
+]

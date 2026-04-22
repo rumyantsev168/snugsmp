@@ -10,12 +10,12 @@
 <body>
     <header style="">
         <img src="source/icon-small.png" height="75" class="icon">
-        <h1 style="margin: 0px;">SnugSMP</h1>
+        <a><h1 style="color: white; margin: 0px;" class="rainbow-shadow">SnugSMP</h1></a>
         <div style="flex-grow: 1"></div>
         <nav>
             <a href="#about">About</a>
-            <a href="#staff">Featured</a>
-            <a href="#staff">News</a>
+            <a href="#featured">Featured</a>
+            <a href="#news">News</a>
             <a href="#staff">Staff</a>
             <a href="#store">Store</a>
         </nav>
@@ -25,6 +25,10 @@
             </a>
         </div>
     </header>
+    <!-- Hero/Banner Section -->
+    <section id="hero" class="hero">
+        <!-- Optional: Add welcome text or logo here -->
+    </section>
     <main>
         <section id="about">
             <h2 class="text-center">Overview</h2>
@@ -35,21 +39,23 @@
                     Build castles, cottages, villages, or whatever feels like home.
                 </p>
                 <p>You can join from both <b>Java</b> and <b>Bedrock</b>!</p>
+                <table id="ip-table"></table>
+                <p style="margin: 0px;">
+                    Server status: <b><span id="status">...</span></b><br>
+                    There are currently <b><span id="player-count">-/-</span></b> players
+                </p>
+                <div id="player-list"></div>
             </div>
         </section>
         <hr>
         <section id="featured">
             <h2 class="text-center">Featured</h2>
-            <p class="section-text">
-                Here are some featured builds and places from our server!
-            </p>
+            <div class="section-text" id="featured-content"></div>
         </section>
         <hr>
         <section id="news">
-            <h2 class="text-center">News</h2>
-            <p class="section-text">
-                The latest news about our server!
-            </p>
+            <h2 class="text-center">Latest announcement</h2>
+            <div class="section-text" id="latest-announcement-content"></div>
         </section>
         <hr>
         <section id="staff">
@@ -58,22 +64,94 @@
                 People who keep it awesome!
             </p>
             <div style="display: flex; justify-content: space-between;">
-                <player-display user="Steve" tooltip="Server Owner"></player-display>
+                <player-display user="ChrisxWH" tooltip="Server Owner"></player-display>
                 <player-display user="Katomancer" tooltip="Admin"></player-display>
                 <player-display user="AbyssalChloe" tooltip="Mod"></player-display>
-                <player-display user="Steve" tooltip="Mod"></player-display>
-                <player-display user="Steve" tooltip="Mod"></player-display>
-                <player-display user="Steve" tooltip="Mod"></player-display>
+                <player-display user="_Leeky_" tooltip="Mod"></player-display>
+                <player-display user="Mollybol8" tooltip="Mod"></player-display>
+            </div>
+        </section>
+        <hr>
+        <section id="store">
+            <h2 class="text-center">Store</h2>
+            <div class="section-text">
+                <p>You can support SnugSMP!</p>
+                <p>Check out our <b><a href="source/data/store.txt">store</a></b> page for ranks and cosmetics!</p>
             </div>
         </section>
     </main>
     <footer>
         <span>
             Made by <b><a href="https://github.com/rumyantsev168/snugsmp">@rumyantsev168</a></b>!
-            Staff pfps by <a href="https://mc-tools.net/avatar">https://mc-tools.net/avatar</a>
+            Staff avatars by <a href="https://mc-tools.net/avatar">https://mc-tools.net/avatar</a>
         </span>
         <span>Not affiliated with Mojang, Minecraft or Microsoft.</span>
     </footer>
+    <script src="source/js/copy.js"></script>
     <script src="source/js/PlayerDisplay.js"></script>
+    <script>
+        // Add active class to nav links based on scroll position
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 120; // Offset for header
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                };
+            });
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                };
+            });
+        });
+
+        // Fetch and display IPs from source/data/ips.json
+        const ipTable = document.getElementById("ip-table");
+        fetch("source/data/ips.json")
+        .then(obj => obj.json())
+        .then(data => {
+            console.log(data);
+            data.forEach(item => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td><code class="ip" onclick="select(this)">${item.address}</code></td>
+                    <td>${item.desc}</td>
+                `;
+                ipTable.appendChild(tr);
+            });
+        });
+
+        // Ping the Java IP and get status, player count and player list
+        const statusSpan = document.getElementById("status");
+        const playerCountSpan = document.getElementById("player-count");
+        const playerlistDiv = document.getElementById("player-list");
+        fetch(`https://api.mcsrvstat.us/3/play.snugsmp.com`)
+        .then(obj => obj.json())
+        .then(data => {
+            console.log(data);
+            if (data.online) {
+                statusSpan.style.color = "#00AA00";
+                statusSpan.style.textShadow = "0px 0px 10px #00AA0060";
+                statusSpan.innerHTML = "online";
+            } else {
+                statusSpan.style.color = "#AA0000";
+                statusSpan.style.textShadow = "0px 0px 10px #00AA0060";
+                statusSpan.innerHTML = "offline";
+            };
+            playerCountSpan.innerText = `${data.players.online}/${data.players.max}`;
+            data.players.list.forEach(player => {
+                playerlistDiv.innerHTML += `<img src="https://identicraft.js.org/avatar/${player.uuid}/32.png" alt="${player.name}" width="32" title="${player.name}">`;
+            });
+        });
+
+        // Fetch and display latest announcement
+        const latestAnnouncement = document.getElementById("latest-announcement-content");
+
+    </script>
 </body>
 </html>

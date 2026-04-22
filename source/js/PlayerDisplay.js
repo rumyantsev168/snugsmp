@@ -39,8 +39,8 @@ class PlayerDisplay extends HTMLElement {
         }
 
         const skinImg = document.createElement("img");
-        skinImg.src = `source/${username}_avatar_drops.png`;
-        skinImg.width = 200;
+        skinImg.src = `source/avatars/${username}_avatar_drops.png`;
+        skinImg.style.width = "100%";
         skinImg.alt = `${username}'s Minecraft skin`;
         skinImg.onerror = () => {
             skinImg.style.display = "none";

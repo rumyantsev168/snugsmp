@@ -5,6 +5,12 @@ html, body {
     color: #dadada;
     font-size: 20px;
     scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    height: 350px;
+    width: 100%;
 }
 
 body {
@@ -34,12 +40,18 @@ nav > a {
     cursor: pointer;
 }
 
-nav > a:hover {
+nav > a:hover,
+nav > a.active {
     text-decoration: underline;
     color: #777777;
 }
 
+nav > a.active {
+    font-weight: 500;
+}
+
 nav {
+    margin: 0px 25px;
     display: flex;
     width: 500px;
     justify-content: space-between;
@@ -59,13 +71,18 @@ img.icon {
 }
 
 main {
-    margin: 350px 0px 0px 0px;
+    margin: 0px auto;
     padding: 1rem;
     border-top: 1px solid #55555560;
     background: #23232360;
     backdrop-filter: blur(10px);
-    width: calc(100% - 2rem);
-    height: fit-content;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+section {
+    scroll-margin-top: 100px;
 }
 
 .text-center {
@@ -84,6 +101,8 @@ header {
     align-items: center;
     gap: 20px;
     border-bottom: 1px solid #55555560;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer {
@@ -124,8 +143,30 @@ hr {
 }
 
 .section-text {
-    margin: auto;
+    margin: 0px auto;
     width: calc(100% - 20px);
     max-width: 850px;
     text-align: center;
+}
+
+table#ip-table {
+    margin: 20px auto;
+}
+
+table#ip-table td {
+    width: 250px;
+    height: 2rem;
+}
+
+code.ip {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div#player-list {
+    margin: 5px 0px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
