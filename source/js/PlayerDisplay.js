@@ -41,7 +41,7 @@ class PlayerDisplay extends HTMLElement {
         const skinImg = document.createElement("img");
         skinImg.src = `source/avatars/${username}_avatar_drops.png`;
         skinImg.style.width = "100%";
-        skinImg.alt = `${username}'s Minecraft skin`;
+        skinImg.alt = `${username}'s Minecraft avatar`;
         skinImg.onerror = () => {
             skinImg.style.display = "none";
             console.warn(`Failed to load skin for user: ${username}`);

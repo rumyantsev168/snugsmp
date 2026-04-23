@@ -171,3 +171,78 @@ div#player-list {
     gap: 20px;
     justify-content: center;
 }
+
+div#latest-announcement-content table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+
+div#latest-announcement-content th {
+    background: #3a3a3a;
+}
+
+div#latest-announcement-content th,
+div#latest-announcement-content td {
+    border: 2px solid lightgray;
+    padding: 3px 5px;
+}
+
+/* ... existing styles above ... */
+
+/* Featured Section - Card Layout */
+#featured-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.featured-card {
+    cursor: pointer;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+}
+
+.featured-card:hover {
+    /*transform: translateY(-5px);*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.featured-card .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    text-align: left;
+}
+
+.featured-card .content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #000;
+}
+
+.featured-card .content p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+

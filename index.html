@@ -35,7 +35,7 @@
             <div class="section-text">
                 <p>This is a peaceful Minecraft survival server for cozy builders and chill players!</p>
                 <p>
-                    No PvP, no pay-to-win, and <b>no resets ever</b> — your builds stay!<br>
+                    No PvP, no pay-to-win, and <b>no resets ever</b>!<br>
                     Build castles, cottages, villages, or whatever feels like home.
                 </p>
                 <p>You can join from both <b>Java</b> and <b>Bedrock</b>!</p>
@@ -89,6 +89,11 @@
     </footer>
     <script src="source/js/copy.js"></script>
     <script src="source/js/PlayerDisplay.js"></script>
+    <script src="source/js/getIPs.js"></script>
+    <script src="source/js/getPing.js"></script>
+    <script src="source/js/getNews.js"></script>
+    <script src="source/js/getFeatured.js"></script>
+    <script src="source/js/min/marked.min.js"></script>
     <script>
         // Add active class to nav links based on scroll position
         const sections = document.querySelectorAll("section");
@@ -109,49 +114,6 @@
                 };
             });
         });
-
-        // Fetch and display IPs from source/data/ips.json
-        const ipTable = document.getElementById("ip-table");
-        fetch("source/data/ips.json")
-        .then(obj => obj.json())
-        .then(data => {
-            console.log(data);
-            data.forEach(item => {
-                let tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td><code class="ip" onclick="select(this)">${item.address}</code></td>
-                    <td>${item.desc}</td>
-                `;
-                ipTable.appendChild(tr);
-            });
-        });
-
-        // Ping the Java IP and get status, player count and player list
-        const statusSpan = document.getElementById("status");
-        const playerCountSpan = document.getElementById("player-count");
-        const playerlistDiv = document.getElementById("player-list");
-        fetch(`https://api.mcsrvstat.us/3/play.snugsmp.com`)
-        .then(obj => obj.json())
-        .then(data => {
-            console.log(data);
-            if (data.online) {
-                statusSpan.style.color = "#00AA00";
-                statusSpan.style.textShadow = "0px 0px 10px #00AA0060";
-                statusSpan.innerHTML = "online";
-            } else {
-                statusSpan.style.color = "#AA0000";
-                statusSpan.style.textShadow = "0px 0px 10px #00AA0060";
-                statusSpan.innerHTML = "offline";
-            };
-            playerCountSpan.innerText = `${data.players.online}/${data.players.max}`;
-            data.players.list.forEach(player => {
-                playerlistDiv.innerHTML += `<img src="https://identicraft.js.org/avatar/${player.uuid}/32.png" alt="${player.name}" width="32" title="${player.name}">`;
-            });
-        });
-
-        // Fetch and display latest announcement
-        const latestAnnouncement = document.getElementById("latest-announcement-content");
-
     </script>
 </body>
 </html>

@@ -1,29 +1,38 @@
 [
     {
-        "name": "Featured №1",
-        "image": "1.png",
+        "name": "Featured 1",
+        "image": "wool.png",
         "coordinates": {
-            "x": 123,
-            "y": 456,
-            "z": 789
+            "x": "-",
+            "y": "-",
+            "z": "-"
         }
     },
     {
-        "name": "Featured №2",
+        "name": "Featured 2",
         "image": "2.png",
         "coordinates": {
-            "x": -123,
-            "y": 0,
-            "z": 4453
+            "x": "-",
+            "y": "-",
+            "z": "-"
         }
     },
     {
-        "name": "Featured №3",
+        "name": "Featured 3",
         "image": "3.png",
         "coordinates": {
-            "x": 0,
-            "y": 0,
-            "z": 0
+            "x": "-",
+            "y": "-",
+            "z": "-"
+        }
+    },
+    {
+        "name": "Featured 4",
+        "image": "4.png",
+        "coordinates": {
+            "x": "-",
+            "y": "-",
+            "z": "-"
         }
     }
 ]
