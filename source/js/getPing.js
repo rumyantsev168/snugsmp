@@ -19,7 +19,7 @@ fetch(`https://api.mcsrvstat.us/3/play.snugsmp.com`)
     };
     playerCountSpan.innerText = `${data.players.online}/${data.players.max}`;
     data.players.list.forEach(player => {
-        playerlistDiv.innerHTML += `<img src="https://identicraft.js.org/avatar/${player.uuid}/32.png" alt="${player.name}" width="32" title="${player.name}">`;
+        playerlistDiv.innerHTML += `<img src="https://identicraft.js.org/avatar/${player.uuid}/32.png" width="32" title="${player.name}">`;
     });
 })
 .catch(err => console.error("Failed to get server ping:", err));

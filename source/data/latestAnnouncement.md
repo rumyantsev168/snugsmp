@@ -1,10 +1,8 @@
-**Hey, I'm just an announcement section!**
+Markdown test:\
+Regular _Italics_ **Bold**
 
-Regular\
-_Italics_\
-**Bold**\
-[It can have links too!](source/data/latestAnnouncement.md)
+[View page source on GitHub!](https://github.com/rumyantsev168/snugsmp)
 
-| And | tables! |
-|:---:|:-------:|
-| 123 | 4567890 |
+| 1 | 2 | 3 | 4 | 5 |
+|:-:|:-:|:-:|:-:|:-:|
+| 6 | 7 | 8 | 9 | 0 |

@@ -11,6 +11,7 @@
     <header style="">
         <img src="source/icon-small.png" height="75" class="icon">
         <a><h1 style="color: white; margin: 0px;" class="rainbow-shadow">SnugSMP</h1></a>
+        <p class="splash">Hello World!</p>
         <div style="flex-grow: 1"></div>
         <nav>
             <a href="#about">About</a>
@@ -36,7 +37,7 @@
                 <p>This is a peaceful Minecraft survival server for cozy builders and chill players!</p>
                 <p>
                     No PvP, no pay-to-win, and <b>no resets ever</b>!<br>
-                    Build castles, cottages, villages, or whatever feels like home.
+                    Build castles, cottages, villages, or whatever feels like home
                 </p>
                 <p>You can join from both <b>Java</b> and <b>Bedrock</b>!</p>
                 <table id="ip-table"></table>
@@ -73,7 +74,6 @@
         </section>
         <hr>
         <section id="store">
-            <h2 class="text-center">Store</h2>
             <div class="section-text">
                 <p>You can support SnugSMP!</p>
                 <p>Check out our <b><a href="source/data/store.txt">store</a></b> page for ranks and cosmetics!</p>
@@ -101,7 +101,7 @@
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach((section) => {
-                const sectionTop = section.offsetTop - 120; // Offset for header
+                const sectionTop = section.offsetTop + 175; // Offset for header
                 const sectionHeight = section.clientHeight;
                 if (window.scrollY >= sectionTop) {
                     current = section.getAttribute("id");

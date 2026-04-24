@@ -73,7 +73,7 @@ img.icon {
 
 main {
     margin: 0px auto;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     border-top: 1px solid #55555560;
     background: #23232360;
     backdrop-filter: blur(10px);
@@ -172,6 +172,10 @@ div#player-list {
     justify-content: center;
 }
 
+div#latest-announcement-content img {
+    width: 40%;
+}
+
 div#latest-announcement-content table {
     margin: auto;
     border-collapse: collapse;
@@ -244,5 +248,27 @@ div#latest-announcement-content td {
     margin: 0;
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+@keyframes splash {
+    from { font-size: 0.9rem }
+    50% { font-size: 1rem }
+    to { font-size: 0.9rem }
+}
+
+.splash {
+    margin: 0px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 260px;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000000;
+    color: #ffff55;
+    transform: rotate(-10deg);
+    animation-name: splash;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
 }
 

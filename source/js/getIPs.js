@@ -9,7 +9,7 @@ fetch("source/data/ips.json")
     data.forEach(item => {
         let tr = document.createElement("tr");
         tr.innerHTML = `
-            <td><code class="ip" onclick="select(this)">${item.address}</code></td>
+            <td><code class="ip rainbow-shadow" onclick="select(this)">${item.address}</code></td>
             <td>${item.desc}</td>
         `;
         ipTable.appendChild(tr);

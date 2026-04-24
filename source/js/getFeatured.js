@@ -9,7 +9,7 @@ fetch("source/data/featured.json")
         card.className = "featured-card";
 
         card.innerHTML = `
-            <img src="source/featured/${item.image}" alt="${item.name}">
+            <img src="https://placehold.co/500x600?text=Image\\nPlaceholder&font=poppins" alt="${item.name}">
             <div class="content">
                 <h3>${item.name}</h3>
                 <p>X: ${item.coordinates.x} Y: ${item.coordinates.y} Z: ${item.coordinates.z}</p>
