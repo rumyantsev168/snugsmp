@@ -1,6 +1,7 @@
 // Fetch and display IPs from source/data/ips.json
 
 const ipTable = document.getElementById("ip-table");
+const serverPlate = document.getElementById("server-plate");
 
 fetch("source/data/ips.json")
 .then(obj => obj.json())
@@ -14,5 +15,6 @@ fetch("source/data/ips.json")
         `;
         ipTable.appendChild(tr);
     });
+    serverPlate.setAttribute("address", data[0].address)
 })
 .catch(err => console.error("Failed to load IPs:", err));

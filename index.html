@@ -8,7 +8,7 @@
     <title>SnugSMP Website</title>
 </head>
 <body>
-    <header style="">
+    <header>
         <img src="source/icon-small.png" height="75" class="icon">
         <a><h1 style="color: white; margin: 0px;" class="rainbow-shadow">SnugSMP</h1></a>
         <p class="splash">Hello World!</p>
@@ -27,9 +27,7 @@
         </div>
     </header>
     <!-- Hero/Banner Section -->
-    <section id="hero" class="hero">
-        <!-- Optional: Add welcome text or logo here -->
-    </section>
+    <section id="hero" class="hero"></section>
     <main>
         <section id="about">
             <h2 class="text-center">Overview</h2>
@@ -41,16 +39,17 @@
                 </p>
                 <p>You can join from both <b>Java</b> and <b>Bedrock</b>!</p>
                 <table id="ip-table"></table>
-                <p style="margin: 0px;">
+                <mc-server-plate id="server-plate"></mc-server-plate>
+                <!-- <p style="margin: 0px;">
                     Server status: <b><span id="status">...</span></b><br>
                     There are currently <b><span id="player-count">-/-</span></b> players
                 </p>
-                <div id="player-list"></div>
+                <div id="player-list"></div> -->
             </div>
         </section>
         <hr>
         <section id="featured">
-            <h2 class="text-center">Featured</h2>
+            <h2 class="text-center">Featured Builds</h2>
             <div class="section-text" id="featured-content"></div>
         </section>
         <hr>
@@ -72,13 +71,12 @@
                 <player-display user="Mollybol8" tooltip="Mod"></player-display>
             </div>
         </section>
-        <hr>
+        <!-- <hr>
         <section id="store">
             <div class="section-text">
-                <p>You can support SnugSMP!</p>
-                <p>Check out our <b><a href="source/data/store.txt">store</a></b> page for ranks and cosmetics!</p>
+                <p style="margin-bottom: 0;">You can support SnugSMP!Check out our <b><a href="source/data/store.txt">store</a></b> page for ranks and cosmetics!</p>
             </div>
-        </section>
+        </section> -->
     </main>
     <footer>
         <span>
@@ -90,10 +88,10 @@
     <script src="source/js/copy.js"></script>
     <script src="source/js/PlayerDisplay.js"></script>
     <script src="source/js/getIPs.js"></script>
-    <script src="source/js/getPing.js"></script>
     <script src="source/js/getNews.js"></script>
     <script src="source/js/getFeatured.js"></script>
     <script src="source/js/min/marked.min.js"></script>
+    <script src="https://rumyantsev168.github.io/static/js/MCServerPlate.js"></script>
     <script>
         // Add active class to nav links based on scroll position
         const sections = document.querySelectorAll("section");
@@ -101,7 +99,7 @@
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach((section) => {
-                const sectionTop = section.offsetTop + 175; // Offset for header
+                const sectionTop = section.offsetTop + 175;
                 const sectionHeight = section.clientHeight;
                 if (window.scrollY >= sectionTop) {
                     current = section.getAttribute("id");

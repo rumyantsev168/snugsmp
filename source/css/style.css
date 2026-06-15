@@ -6,6 +6,7 @@ html, body {
     font-size: 20px;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    height: fit-content;
 }
 
 .hero {
